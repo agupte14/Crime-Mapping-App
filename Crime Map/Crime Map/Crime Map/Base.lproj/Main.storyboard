@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JJh-vq-i1s">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Crime Map - Latest-->
+        <scene sceneID="jG0-A7-x2I">
+            <objects>
+                <tableViewController id="fzh-Mp-6if" customClass="ViewController" customModule="Crime_Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aKh-ft-L9e">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TabID" id="vak-m5-eR1">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vak-m5-eR1" id="tq5-eh-JxY">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="eZD-m3-Mbh" kind="show" identifier="CrimeDat" id="722-rP-y3p"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fzh-Mp-6if" id="M8j-hj-rwT"/>
+                            <outlet property="delegate" destination="fzh-Mp-6if" id="IUQ-Od-2Q3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Crime Map - Latest" id="xzw-WE-4Mt"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G1w-g3-8Gi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="847" y="182"/>
+        </scene>
+        <!--Data-->
+        <scene sceneID="rL8-nl-7lM">
+            <objects>
+                <tableViewController id="eZD-m3-Mbh" customClass="CrimeData" customModule="Crime_Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wFN-3w-cwN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lWg-T3-isy">
+                            <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Show Map"/>
+                            <connections>
+                                <segue destination="MLj-FI-unH" kind="show" identifier="MapView" id="yah-M6-hpe"/>
+                            </connections>
+                        </button>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TabCell" id="rBf-Qe-w5r">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rBf-Qe-w5r" id="Xnk-HH-VSt">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="maW-XQ-QWn" kind="show" identifier="CrimeDes" id="Ykd-2h-eXC"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eZD-m3-Mbh" id="8Qm-hE-Kfi"/>
+                            <outlet property="delegate" destination="eZD-m3-Mbh" id="76k-kI-PB1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Data" id="4lg-I8-Hs8"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eFj-Y4-5Iz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1659" y="182"/>
+        </scene>
+        <!--Crime Desc-->
+        <scene sceneID="Rfh-7w-Gc0">
+            <objects>
+                <tableViewController id="maW-XQ-QWn" customClass="CrimeDesc" customModule="Crime_Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="141" sectionHeaderHeight="28" sectionFooterHeight="28" id="NDn-oX-Ckt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TabDes" rowHeight="141" id="9My-Tu-5yd" customClass="CustomCell" customModule="Crime_Map" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="141"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9My-Tu-5yd" id="AhP-Hd-l5K">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyA-AX-n9b">
+                                            <rect key="frame" x="8" y="8" width="432" height="55"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ne-bi-a45">
+                                            <rect key="frame" x="8" y="59" width="432" height="73"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label1" destination="fyA-AX-n9b" id="cql-Hw-zbT"/>
+                                    <outlet property="label2" destination="1Ne-bi-a45" id="HxE-RN-tNc"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="maW-XQ-QWn" id="C75-Uz-0gZ"/>
+                            <outlet property="delegate" destination="maW-XQ-QWn" id="PSW-dU-DIS"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ft-Uk-2SP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1659" y="992"/>
+        </scene>
+        <!--Map View-->
+        <scene sceneID="LwI-HS-LBj">
+            <objects>
+                <viewController id="MLj-FI-unH" customClass="CrimeMap" customModule="Crime_Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AWv-g1-Rwy"/>
+                        <viewControllerLayoutGuide type="bottom" id="W2h-E1-SXn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z2O-Xz-blN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nJ1-LN-Ymc">
+                                <rect key="frame" x="20" y="72" width="560" height="508"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ISV-fk-G5M">
+                                <rect key="frame" x="187" y="528" width="225" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="225" id="fUE-w6-Z5u"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapLayout:" destination="MLj-FI-unH" eventType="valueChanged" id="lMc-Mw-Bl2"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nJ1-LN-Ymc" firstAttribute="top" secondItem="AWv-g1-Rwy" secondAttribute="bottom" constant="8" symbolic="YES" id="Vnw-hR-EVy"/>
+                            <constraint firstItem="nJ1-LN-Ymc" firstAttribute="centerX" secondItem="ISV-fk-G5M" secondAttribute="centerX" id="a4m-5Y-qR5"/>
+                            <constraint firstItem="nJ1-LN-Ymc" firstAttribute="trailing" secondItem="Z2O-Xz-blN" secondAttribute="trailingMargin" id="qbj-m6-OLu"/>
+                            <constraint firstItem="W2h-E1-SXn" firstAttribute="top" secondItem="ISV-fk-G5M" secondAttribute="bottom" constant="44" id="t5A-TT-GCV"/>
+                            <constraint firstItem="nJ1-LN-Ymc" firstAttribute="leading" secondItem="Z2O-Xz-blN" secondAttribute="leadingMargin" id="tbe-X7-rBb"/>
+                            <constraint firstAttribute="bottom" secondItem="nJ1-LN-Ymc" secondAttribute="bottom" constant="20" symbolic="YES" id="vZp-5D-6Ji"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map View" id="Ir3-SO-Aku">
+                        <barButtonItem key="backBarButtonItem" title="Crime Data" id="JpR-a1-YWU"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="layout" destination="ISV-fk-G5M" id="xOa-UW-AdU"/>
+                        <outlet property="map" destination="nJ1-LN-Ymc" id="Ayx-W3-PBV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RbR-fe-jCb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2373" y="182"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9VN-VN-cJN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JJh-vq-i1s" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XYO-Su-3BW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fzh-Mp-6if" kind="relationship" relationship="rootViewController" id="CaN-UB-ydj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DaR-rZ-IVO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35" y="182"/>
+        </scene>
+    </scenes>
+</document>
